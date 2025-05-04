@@ -16,7 +16,7 @@ In addition, the Global Airports dataset, accessed via the World Bank was used t
 
 The UFO Sightings and Global Airports datasets were downloaded as .csv files and imported into a Pandas dataframe in Python.
 In order to handle missing or invalid latitude and longitude values, these columns were converted to floats, with `errors = "coerce"`, meaning that any invalid data would be set to `NaN`. Any such rows were then dropped from the dataframe. Correct latitude and longitude columns were both crucial to the project; it was therefore important to ensure zero missing values, and interpolation the values was decided against, especially as the initial dataset contained only one invalid row.
-```
+```Python
 #convert lang/long columns to numeric. Set errors to "coerce" and drop na to remove missing values
 
 UFO_df["latitude"] = pd.to_numeric(UFO_df["latitude"], errors = "coerce")
