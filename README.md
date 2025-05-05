@@ -108,7 +108,7 @@ For each row in the UFO dataframe, the airport code of the nearest airport was a
 > *Figure 24 By looking at distances of 300 kilometres or less, a clearer narrative emerges: a strong negative correlation between distance to an airport and frequency of sightings, with a drop towards the left of the distribution.*
 
 ### Controlling for population density
-Figure 13 appears to prove a strong negative correlation between frequency of UFO sightings and distance to the nearest airport. There is a drop towards the left of the distribution, meaning fewer sightings were reported by people in extreme proximity to - or actually at - an airport, where aircraft would be flying lower, and people may be less likely to mistake them for a UFO. Prima facie, the graph appears to make a very strong case for the hypothesis that proximity to an airport predicts UFO sightings. Having said this, further analysis is required to control for population density. 
+Figure 24 appears to prove a strong negative correlation between frequency of UFO sightings and distance to the nearest airport. There is a drop towards the left of the distribution, meaning fewer sightings were reported by people in extreme proximity to - or actually at - an airport, where aircraft would be flying lower, and people may be less likely to mistake them for a UFO. Prima facie, the graph appears to make a very strong case for the hypothesis that proximity to an airport predicts UFO sightings. Having said this, further analysis is required to control for population density. 
 Airports are often located close to major urban centres, where there are more people. It could be reasonably assumed that the reported frequency of any type of human-observed phenomenon, terrestrial or otherwise, might increase the closer you get to an airport. The more people there are in any given location, the more people can submit reports.
 ```Python
 years = range(2000, 2015)
@@ -181,10 +181,12 @@ It is important to note that this does not provide a true per capita metric. To 
 
 ## Results
 Frequency of reported UFO sightings, weighted by population, was plotted against distance to the nearest airport for the years 2000-2014. (Figure 27)
+
 ![image](https://github.com/user-attachments/assets/92637f6a-8137-40ac-b06f-09d53ae17b0c)
 > *Figure 27 Histogram plots for the years 2000-2014 showing the frequency of reported UFO sightings (weighted to normalise by population density) in the US versus distance from an airport, plotted on a logarithmic scale due to the wide range of frequencies*
 
 Despite some outliers and anomalies, for example, unusually high frequencies towards the middle and right of the distribution in 2001, 2004, 2009 and 2010, each year appears to mirror the overall pattern shown in the aggregate graph (Figure 28): a moderate negative correlation between distance from an airport and frequency of reported UFO sightings, with the distribution tending to peak at a threshold of 100-150 km and slightly dropping in the immediate vicinity of an airport.
+
 ![image](https://github.com/user-attachments/assets/d4b86375-5ae9-423a-ab64-e885d5913853)
 > *Figure 28 Histogram of all reported UFO sightings (normalised by population density) for the years 2000-2014 in the US, plotted on a logarithmic scale, versus distance to an airport*
 
@@ -235,6 +237,7 @@ Skew:                           2.467   Prob(JB):                     1.53e-31
 Kurtosis:                      10.165   Cond. No.                     1.07e+03
 ==============================================================================
 ```
+> * 34 Linear regression summary. The model predicts a decrease of approximately 7.6 sightings for every 10km distance from an airport, after controlling for population density.*
 
 ## Future iterations
 Whereas the visualisations and linear regression model demonstrate a negative correlation between frequency of UFO sightings and distance to an airport, outliers remain in the data, and for some years, the corelation is more moderate.
