@@ -206,7 +206,7 @@ When compared to Figure 31, which shows reported sightings specifically from 200
 > [Click here to view an interactive version of this map](https://mike-brennan-1.github.io/UFO/docs/heatmap_2004.html)
 
 ### Statistical validation
-Sightings were split into 10km bins according to `distance_from_airport_km`. A linear regression model was trained on the count of sightings per bin and the mean of the inverse population density (`sighting_adjusted`) as its features. The model confirmed a statistically significant negative correlation between distance from an airport and number of sightings. Based on the model output (Figure 32), the null hypothesis was rejected in favour of the alternative hypothesis (Table 4): distance from an airport negatively predicts reported UFO sightings.
+Sightings were split into 10km bins according to `"distance_from_airport_km"` A linear regression model was trained to predict number of sightings per bin, with `"distance_from_airport_km"` and the mean inverse population density (`"sighting_adjusted”`) as its features.  The model confirmed a statistically significant negative correlation between distance from an airport and number of sightings. Based on the model output (Figure 32), the null hypothesis was rejected in favour of the alternative hypothesis (Table 4): distance from an airport negatively predicts reported UFO sightings.
 
 ```Text
 OLS Regression Results                            
