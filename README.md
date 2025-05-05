@@ -193,6 +193,8 @@ Figure 29 shows a heatmap of the reported sightings, weighted by population dens
 ![image](https://github.com/user-attachments/assets/fcccdd9a-bdc7-49fb-b0c1-18c12c641a5d)
 > *Figure 29 Heatmap of reported UFO sightings 2000-2014, weighted by population density.*
 
+> *Note: the file is too large to render an interactive version on GitHub. You can download and trust the Jupyter Notebook [here](https://github.com/Mike-Brennan-1/UFO/blob/main/UFO_analysis.ipynb).
+
 By way of comparison, Figure 30 , taken from an article published by MIT, shows volume of air traffic over the United States in 2004. (Mozdzanowska & Hansman, 2007)
 
 ![image](https://github.com/user-attachments/assets/244d6f18-ad97-4f0b-a4e8-34eedc34c9bb)
