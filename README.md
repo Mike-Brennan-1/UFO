@@ -72,8 +72,8 @@ UFO_df.to_csv("UFO_pbi_data.csv", index = False)
 > *Figure 21  Snapshot of Power BI visual, displaying sightings near London Heathrow airport from 1960 onwards. The tooltips show some basic information about the report, the location, and the nearest airport.*
 
 ## The Airport Hypothesis
-| Hypothesis | Test Result |
-|------------|-------------|
+| Hypothesis | Test |
+| --------------- | --------------- |
 | **H₀**: Distance from an airport has no effect on frequency of UFO sightings | No statistically significant correlation between distance from airport and frequency of sightings |
 | **H₁**: The closer you get to an airport, the more likely you are to report a UFO | Distance from an airport and frequency of UFO reports negatively correlate, with *p* < 0.05 |
 > *Table 4 Hypothesis statement*
@@ -186,6 +186,59 @@ Despite some outliers and anomalies, for example, unusually high frequencies tow
 > *Figure 28 Histogram of all reported UFO sightings (normalised by population density) for the years 2000-2014 in the US, plotted on a logarithmic scale, versus distance to an airport*
 
 Figure 29 shows a heatmap of the reported sightings, weighted by population density from 2000-2014.
+
+![image](https://github.com/user-attachments/assets/fcccdd9a-bdc7-49fb-b0c1-18c12c641a5d)
+> *Figure 29 Heatmap of reported UFO sightings 2000-2014, weighted by population density.*
+
+By way of comparison, Figure 30 , taken from an article published by MIT, shows volume of air traffic over the United States in 2004. (Mozdzanowska & Hansman, 2007)
+
+![image](https://github.com/user-attachments/assets/244d6f18-ad97-4f0b-a4e8-34eedc34c9bb)
+> *Figure 30 Volume of air traffic over the contiguous United States in 2004 (Mozdzanowska & Hansman, 2007)*
+
+When compared to Figure 31, which shows reported sightings specifically from 2004, some similarities can be observed. Namely: the bulk of weighted sightings and of air traffic is in the Eastern half of the country. Much of the Mountain and Midwest states show low levels of both UFO reports and air traffic. Various hubs of activity can be observed on the West Coast and the Midwest: Los Angeles, San Jose, Seattle and Denver for instance.
+
+![image](https://github.com/user-attachments/assets/a50ebe8f-7e3c-46a2-a275-415a9fcc0a92)
+> *Figure 31  Heatmap of reported UFO sightings in 2004, weighted by population density.*
+
+> [Click here to view an interactive version of this map](https://mike-brennan-1.github.io/UFO/docs/heatmap_2004.html)
+
+### Statistical validation
+Sightings were split into 10km bins according to `distance_from_airport_km`. A linear regression model was trained on the count of sightings per bin and the mean of the inverse population density (`sighting_adjusted`) as its features. The model confirmed a statistically significant negative correlation between distance from an airport and number of sightings. Based on the model output (Figure 32), the null hypothesis was rejected in favour of the alternative hypothesis (Table 4): distance from an airport negatively predicts reported UFO sightings.
+
+```Text
+OLS Regression Results                            
+==============================================================================
+Dep. Variable:         sighting_count   R-squared:                       0.335
+Model:                            OLS   Adj. R-squared:                  0.303
+Method:                 Least Squares   F-statistic:                     10.56
+Date:                Mon, 05 May 2025   Prob (F-statistic):           0.000192
+Time:                        09:09:53   Log-Likelihood:                -404.74
+No. Observations:                  45   AIC:                             815.5
+Df Residuals:                      42   BIC:                             820.9
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+============================================================================================
+                               coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+const                     3167.4350    528.221      5.996      0.000    2101.441    4233.429
+bin_midpoint                -7.6061      1.713     -4.441      0.000     -11.063      -4.149
+mean_inverse_pop_density -1186.5798   1060.338     -1.119      0.269   -3326.429     953.270
+==============================================================================
+Omnibus:                       42.362   Durbin-Watson:                   0.376
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              141.907
+Skew:                           2.467   Prob(JB):                     1.53e-31
+Kurtosis:                      10.165   Cond. No.                     1.07e+03
+==============================================================================
+```
+
+## Future iterations
+Whereas the visualisations and linear regression model demonstrate a negative correlation between frequency of UFO sightings and distance to an airport, outliers remain in the data, and for some years, the corelation is more moderate.
+
+To investigate the effect further, more precise distance calculation, using the haversine formula, combined with data on flight paths or airport capacity would permit greater isolation of the variable under scrutiny. 
+
+As the model’s R-squared suggests, airport proximity accounts for 34% of the variance. It is likely that airport proximity is only one variable in a multivariate model that can help predict the location and frequency of reported UFO sightings. Future iterations of this project might include examining meteorological data to check visibility or the presence of unusual weather phenomena, data on home PC or smartphone ownership and its relationship to reporting behaviour over time, or events in popular culture – the release of a UFO-themed blockbuster, for example – and whether they coincide with spikes in reporting frequency.
+
+
 
 
 
