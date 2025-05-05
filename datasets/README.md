@@ -9,4 +9,4 @@ Accessed from The World Bank. Available at: https://datacatalog.worldbank.org/se
 
 ## UFO Sightings
 
-Accessed from Kaggle.com. Available at https://www.kaggle.com/datasets/NUFORC/ufo-sightings
+The file is too large to store on GitHub. It can be accessed from Kaggle.com. Available at https://www.kaggle.com/datasets/NUFORC/ufo-sightings
