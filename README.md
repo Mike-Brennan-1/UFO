@@ -72,10 +72,12 @@ UFO_df.to_csv("UFO_pbi_data.csv", index = False)
 > *Figure 21  Snapshot of Power BI visual, displaying sightings near London Heathrow airport from 1960 onwards. The tooltips show some basic information about the report, the location, and the nearest airport.*
 
 ## The Airport Hypothesis
+
 | Hypothesis | Test |
 | --------------- | --------------- |
 | **H₀**: Distance from an airport has no effect on frequency of UFO sightings | No statistically significant correlation between distance from airport and frequency of sightings |
 | **H₁**: The closer you get to an airport, the more likely you are to report a UFO | Distance from an airport and frequency of UFO reports negatively correlate, with *p* < 0.05 |
+
 > *Table 4 Hypothesis statement*
 
 One common explanation for alleged UFO sightings is that people can mistake conventional aircraft flying overhead for alien spacecraft. To test the hypothesis, the geospatial data associated with each sighting was used to calculate the distance to the nearest airport; airport locations were determined using the Global Airports dataset.
@@ -168,10 +170,11 @@ Given that each row of the UFO dataset represents one sighting, and the purpose 
 
 For example:
 
-| Number of Reports | Population Density (per sq. km) | Adjusted Sighting |
+| Number of Reports | Population Density (per sq. km) | Adjusted Sighting|
 |-------------------|-------------------------------|--------------------|
 | 1                 | 1000                          | 1 / 1000 = 0.001   |
 | 1                 | 500                           | 1 / 500 = 0.002    |
+
 > *Table 5 A simplified example of how taking the inverse of population density normalises each reported sighting. A sighting reported in an area that is half as densely populated as another area, counts twice as much, and vice versa.*
 
 It is important to note that this does not provide a true per capita metric. To do so, the dataset would need to be grouped into square-kilometre bins and the total sum of sightings divided by the population per bin. Given that the model is focused on distance from an airport, and is agnostic of actual location, the adjusted sighting column was deemed a valid proxy for sightings weighted by population density, which could be aggregated in the next step.
