@@ -1,4 +1,5 @@
 title: Portfolio project
+logo: /assets/logo.png
 description: Geospatial modelling and multivariate statistical analysis of reported UFO sightings
 show_downloads: false
 theme: jekyll-theme-minimal
