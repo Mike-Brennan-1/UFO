@@ -163,7 +163,9 @@ UFO_gdfs[2009].head()
 > *Figure 26  The column `”adjusted_sighting”` was calculated by taking the inverse of the population density*
 
 $$
+
 \text{Adjusted sighting} = \frac{1}{\text{population density}}
+
 $$
 
 Given that each row of the UFO dataset represents one sighting, and the purpose of normalising by population density is to isolate the variable of proximity to an airport without regard to population, taking the inverse of the population density both penalises reports from highly populated areas and promotes reports from sparsely populated areas. Crucially, all sightings were weighted to precisely the same degree with respect to population.
