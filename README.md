@@ -71,6 +71,8 @@ UFO_df.to_csv("UFO_pbi_data.csv", index = False)
 ![image](https://github.com/user-attachments/assets/d08eef9c-0b08-4bd4-803d-db0dd9954b33)
 > *Figure 21  Snapshot of Power BI visual, displaying sightings near London Heathrow airport from 1960 onwards. The tooltips show some basic information about the report, the location, and the nearest airport.*
 
+>[**Click here to try the UFO Sightings dashboard for yourself**](https://app.powerbi.com/view?r=eyJrIjoiODJiMmQ3ZjQtMzQyZS00YTJjLWJiYzgtN2RmMjhhNzY3ODhmIiwidCI6IjQ1ZGMxZGFlLWNlZWUtNDg1Yy1iYWY1LThkNWFkMmM4ODk1ZiJ9) 
+
 ## The Airport Hypothesis
 
 | Hypothesis | Test |
@@ -237,7 +239,7 @@ Skew:                           2.467   Prob(JB):                     1.53e-31
 Kurtosis:                      10.165   Cond. No.                     1.07e+03
 ==============================================================================
 ```
-> * 34 Linear regression summary. The model predicts a decrease of approximately 7.6 sightings for every 10km distance from an airport, after controlling for population density.*
+>*34 Linear regression summary. The model predicts a decrease of approximately 7.6 sightings for every 10km distance from an airport, after controlling for population density.*
 
 ## Future iterations
 Whereas the visualisations and linear regression model demonstrate a negative correlation between frequency of UFO sightings and distance to an airport, outliers remain in the data, and for some years, the corelation is more moderate.
